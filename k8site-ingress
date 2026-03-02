@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: k8site-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: k8site.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: k8site-service
+            port:
+              number: 80

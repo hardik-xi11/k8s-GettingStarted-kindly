@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8site
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: k8site
+  template:
+    metadata:
+      labels:
+        app: k8site
+    spec:
+      containers:
+      - name: k8site
+        image: hardik0005/k8site:v3
+        ports:
+        - containerPort: 80
+        imagePullPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: k8site-service
+spec:
+  type: ClusterIP
+  selector:
+    app: k8site
+  ports:
+  - port: 80
+    targetPort: 80
