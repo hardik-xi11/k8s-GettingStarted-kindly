@@ -183,44 +183,15 @@ Check the status of the ingress deployment!
 
 ```
 
+### Create an Ingress Service for the web app!
 
- 1. Clone the repo
-```bash
-
-	git clone https://github.com/hardik-xi11/k8site.git
-
-
-```
-```bash
-
-	cd k8site
-
-```
-
-
-
- 2. Build the image locally
-```bash
-
-	docker build -t k8site:v1 .
-
-```
-
- 3. Load the image into Kind
- (This sends the image from your computer to the Kind nodes)
- 
- ```
-
-	kind load docker-image k8site:v1 --name k8s-demo-cluster
-
-```
-
-Ingress for site
+Ingress manifest for site
 ```
 
 	kubectl apply -f https://raw.githubusercontent.com/hardik-xi11/k8s-GettingStarted-kindly/refs/heads/master/k8site-ingress.yaml
 	
 ```
+### Now deploy the manifes for the web app which will also pull the docker image of the web app
 Site manifest
 
 ```
@@ -299,7 +270,7 @@ Site manifest
 
 
 
-### Uninstall
+### Uninstall and wrapping up!
 
 ```powershell
 
