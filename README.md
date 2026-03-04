@@ -159,9 +159,13 @@ Scale the deployment to 3 pod replicas instead of 1
 
 ### Create the new multi node cluster using the cluster manifest
 
+#### Download the config file
 ```bash
-
-	kind create cluster --config https://raw.githubusercontent.com/hardik-xi11/k8s-GettingStarted-kindly/main/kind-multi-node.yaml
+	curl -o kind-config.yaml https://raw.githubusercontent.com/hardik-xi11/k8s-GettingStarted-kindly/refs/heads/master/kind-multi-node.yaml
+```
+#### Create the cluster using the config file 
+```bash
+	kind create cluster --config kind-config.yaml
 
 	
 ```
