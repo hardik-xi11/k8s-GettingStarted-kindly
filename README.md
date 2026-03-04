@@ -81,12 +81,14 @@ Port forwarding the nginx pod to see on local system
 ```
 ---
 
-#### First create a wordpress manifest file and then apply the manifest to create a deployment.
-```bash
+### Use the following Wordpress Manifest to deploy a Wordpress and a MySQL containers
 
-	kubectl apply -f .\wordpress-demo.yaml
-	
+Wordpress manifest
 ```
+
+	kubectl apply -f https://github.com/hardik-xi11/k8s-GettingStarted-kindly/raw/refs/heads/master/wordpress-demo.yaml	
+```
+
 
 Port forwarding the wordpress service to use it on local system
 ```bash
@@ -128,11 +130,6 @@ Scale the deployment to 3 pod replicas instead of 1
 
 
 
-Wordpress manifest
-```
-
-	kubectl apply -f https://github.com/hardik-xi11/k8s-GettingStarted-kindly/raw/refs/heads/master/wordpress-demo.yaml	
-```
 
 
 ---
