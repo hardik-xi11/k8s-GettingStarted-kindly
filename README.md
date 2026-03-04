@@ -157,14 +157,17 @@ Scale the deployment to 3 pod replicas instead of 1
 ```
 
 
-### define the k8s config and use the following command to create the cluster
+### Create the new multi node cluster using the cluster manifest
 
 ```bash
 
-	kind create cluster --config kind-multi-node.yaml
+	kind create cluster --config https://raw.githubusercontent.com/hardik-xi11/k8s-GettingStarted-kindly/main/kind-multi-node.yaml
+
 	
 ```
 ---
+
+# Deploying a JS App and exposing it through an Ingress Service
 
 
 ### apply the nginx ingress controller manifest to create an ingress controller
